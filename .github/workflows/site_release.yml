@@ -1,0 +1,24 @@
+name: Release
+
+on: 
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        description: 'Bump type'     
+        required: true
+        default: 'minor' 
+        type: choice
+        options:
+        - patch
+        - minor
+        - major
+
+jobs:
+  validate_site:
+    uses: ifood/.workflows/.github/workflows/site_validate.yml@main
+    with:
+      directory: .
+  release:
+    uses: ifood/.workflows/.github/workflows/npm_publish.yml@main
+    with:
+      bump_type: ${{ github.event.inputs.bump_type }}

@@ -45,9 +45,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: '',
+        title: 'Open Source',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Go to home',
           src: 'img/logo.svg',
         },
         items: [
@@ -68,7 +68,7 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Site Map',
             items: [
               {
                 label: 'Docs',
@@ -76,13 +76,20 @@ const config = {
               },
             ],
           },
-          
           {
-            title: 'More',
+            title: 'Information',
             items: [
               {
                 label: 'GitHub',
                 href: 'https://github.com/ifood',
+              },
+              {
+                label: 'Blog',
+                href: 'https://medium.com/ifood-engineering',
+              },
+              {
+                label: 'Careers',
+                href: 'https://carreiras.ifood.com.br/en',
               },
             ],
           },

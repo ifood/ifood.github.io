@@ -1,0 +1,15 @@
+name: Deploy Site
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Release']
+    branches: [main]
+    types: 
+      - completed
+
+jobs:
+  deploy-site:
+    uses: ifood/.workflows/.github/workflows/site_publish.yml@main
+    with:
+      directory: .

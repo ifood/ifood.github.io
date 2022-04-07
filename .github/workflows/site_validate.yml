@@ -1,0 +1,16 @@
+name: Validate
+
+on:
+  workflow_call:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  validate_site:
+    uses: ifood/.workflows/.github/workflows/site_validate.yml@main
+    with:
+      directory: .

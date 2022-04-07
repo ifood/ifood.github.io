@@ -58,12 +58,6 @@ const config = {
             label: 'Documentation',
           },
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'CLA',
-          },
-          {
             href: 'https://github.com/ifood',
             label: 'GitHub',
             position: 'right',

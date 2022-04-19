@@ -1,0 +1,17 @@
+.wrapper {
+    padding: 2rem 0;
+}
+
+.project_card {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid rgb(220, 220, 220);
+}
+
+.project_card a {
+    color: var(--ifm-heading-color);
+}
+
+.project_card a:hover {
+    color: var(--ifm-link-color);
+}

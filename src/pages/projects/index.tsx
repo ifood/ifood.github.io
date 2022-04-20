@@ -38,7 +38,7 @@ export default function Projects(): JSX.Element {
                   <h3>{project.name}</h3>
                   <p>{project.description}</p>
                   <hr />
-                  <a
+                  {project.homepage && <a
                     href={project.homepage}
                     aria-label="Go to link"
                     title="Go to the project website"
@@ -46,7 +46,7 @@ export default function Projects(): JSX.Element {
                     target="_blank"
                   >
                     <RiExternalLinkFill size="1.3rem" />
-                  </a>
+                  </a>}
                   <a
                     href={project.html_url}
                     aria-label="Go to link"

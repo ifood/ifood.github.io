@@ -14,11 +14,18 @@ on:
         - major
 
 jobs:
+  update_site_data:
+    uses: ./.github/workflows/site_data.yml
   validate_site:
+    needs: update_site_data
     uses: ifood/.workflows/.github/workflows/site_validate.yml@main
     with:
       directory: .
   release:
+    needs: validate_site
     uses: ifood/.workflows/.github/workflows/npm_publish.yml@main
+    secrets:
+      NPM_DEPLOY_TOKEN: ${{ secrets.NPM_TOKEN }}
     with:
       bump_type: ${{ github.event.inputs.bump_type }}
+

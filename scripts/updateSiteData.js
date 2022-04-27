@@ -76,10 +76,11 @@ const filterRepos = (repos) => {
 
 const writeData = (name, data) => {
   console.log("Writting data");
-  fs.writeFileSync(
-    path.join(__dirname, "../static", "data", `${name}.json`),
-    JSON.stringify(data)
-  );
+  const pathDir = path.join(__dirname, "../static", "data");
+  if (!fs.existsSync(pathDir)) {
+    fs.mkdirSync(pathDir);
+  }
+  fs.writeFileSync(path.join(pathDir, `${name}.json`), JSON.stringify(data));
 };
 
 async function run() {

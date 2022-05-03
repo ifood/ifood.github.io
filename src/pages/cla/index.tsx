@@ -1,0 +1,50 @@
+import React from "react";
+import Layout from "@theme/Layout";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import clsx from "clsx";
+
+import styles from "./style.module.css";
+
+export default function Projects(): JSX.Element {
+  const { siteConfig } = useDocusaurusContext();
+  const env = siteConfig.customFields;
+
+  const url = `${env.githubUrl}/authorize?scope=user:email&client_id=${env.githubClientId}&redirect_uri=${siteConfig.url}/auth`
+
+  return (
+    <Layout
+      title={`Projects | ${siteConfig.title}`}
+      description="Find out about all of the projects of iFood Open Source."
+    >
+      <main className="padding-bottom--xl">
+        <div className="container padding-top--lg">
+          <div className="row">
+            <div className="col">
+              <h1>Contributing to iFood Open Source Projects</h1>
+              <p>
+                Welcome to the iFood Open Source contributor license agreement
+                (CLA). iFood requires that all contributions to its projects are
+                accompanied by a signed CLA before the contributions can be
+                accepted for iFood projects.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col col--12">
+              <p>CLA Text goes here</p>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className={clsx("col col--12 center-btn", styles.center_btn)}>
+              <a href={url} className="button button--secondary">Accept with GitHub</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </Layout>
+  );
+}

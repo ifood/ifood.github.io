@@ -18,7 +18,8 @@ const config = {
   projectName: 'docusaurus', // Usually your repo name.
   customFields: {
     githubUrl: process.env.GITHUB_BASE_URL,
-    githubClientId: process.env.GITHUB_CLIENT_ID
+    githubClientId: process.env.GITHUB_CLIENT_ID,
+    claUrl: process.env.CLA_URL
   },
   themes: [
     '@ifood/docusaurus-theme'

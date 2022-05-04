@@ -1,23 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import clsx from "clsx";
+import CodeBlock from "@theme/CodeBlock";
 
 import styles from "./style.module.css";
 
 export default function Projects(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
-  const env = siteConfig.customFields;
+  const [data, setData] = useState("");
 
-  const url = `${env.githubUrl}/authorize?scope=user:email&client_id=${env.githubClientId}&redirect_uri=${siteConfig.url}/auth`
+  const env = siteConfig.customFields;
+  const url = `${env.githubUrl}/authorize?scope=user:email&client_id=${env.githubClientId}&redirect_uri=${siteConfig.url}/auth`;
+
+  useEffect(() => {
+    const load = async () => {
+      const response = await fetch(env.claUrl as string);
+      const data = await response.blob();
+      const text = await data.text();
+      setData(text);
+    };
+    load();
+  }, []);
 
   return (
     <Layout
-      title={`Projects | ${siteConfig.title}`}
+      title={`Contributor license agreement`}
       description="Find out about all of the projects of iFood Open Source."
     >
-      <main className="padding-bottom--xl">
-        <div className="container padding-top--lg">
+      <main className="padding-top--lg padding-bottom--xl">
+        <div className="container">
           <div className="row">
             <div className="col">
               <h1>Contributing to iFood Open Source Projects</h1>
@@ -33,14 +45,16 @@ export default function Projects(): JSX.Element {
         <div className="container">
           <div className="row">
             <div className="col col--12">
-              <p>CLA Text goes here</p>
+              <CodeBlock>{data}</CodeBlock>
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className="container margin-top--lg">
           <div className="row">
             <div className={clsx("col col--12 center-btn", styles.center_btn)}>
-              <a href={url} className="button button--secondary">Accept with GitHub</a>
+              <a href={url} className="button button--secondary">
+                Accept with GitHub
+              </a>
             </div>
           </div>
         </div>

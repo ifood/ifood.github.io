@@ -45,16 +45,16 @@ export default function Projects(): JSX.Element {
         <div className="container">
           <div className="row">
             <div className="col col--12">
-              <CodeBlock>{data}</CodeBlock>
+              <CodeBlock className={styles.buttonless}>{data}</CodeBlock>
             </div>
           </div>
         </div>
         <div className="container margin-top--lg">
           <div className="row">
             <div className={clsx("col col--12 center-btn", styles.center_btn)}>
-              <a href={url} className="button button--secondary">
+              {data && <a href={url} className="button button--secondary">
                 Accept with GitHub
-              </a>
+              </a>}
             </div>
           </div>
         </div>

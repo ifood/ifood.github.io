@@ -19,7 +19,8 @@ const config = {
   customFields: {
     githubUrl: process.env.GITHUB_BASE_URL,
     githubClientId: process.env.GITHUB_CLIENT_ID,
-    claUrl: process.env.CLA_URL
+    claUrl: process.env.CLA_URL,
+    ifoodServiceUrl: process.env.IFOOD_SERVICE_URL
   },
   themes: [
     '@ifood/docusaurus-theme'

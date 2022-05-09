@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import clsx from "clsx";
 import CodeBlock from "@theme/CodeBlock";
 
 import styles from "./style.module.css";
+import { ClaService } from "@site/src/services/ClaService";
 
 export default function Projects(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   const [data, setData] = useState("");
-
-  const env = siteConfig.customFields;
-  const url = `${env.githubUrl}/authorize?scope=user:email&client_id=${env.githubClientId}&redirect_uri=${siteConfig.url}/auth`;
+  const claService = useMemo(() => new ClaService(siteConfig), []);
 
   useEffect(() => {
     const load = async () => {
-      const response = await fetch(env.claUrl as string);
-      const data = await response.blob();
-      const text = await data.text();
+      const text = await claService.getClaText();
       setData(text);
     };
     load();
@@ -52,7 +49,7 @@ export default function Projects(): JSX.Element {
         <div className="container margin-top--lg">
           <div className="row">
             <div className={clsx("col col--12 center-btn", styles.center_btn)}>
-              {data && <a href={url} className="button button--secondary">
+              {data && <a href={claService.getGHCodeUrl()} className="button button--primary">
                 Accept with GitHub
               </a>}
             </div>

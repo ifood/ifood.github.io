@@ -9,7 +9,7 @@ require('dotenv').config();
 const config = {
   title: 'iFood Open Source',
   tagline: 'iFood Open Source',
-  url: process.env.URL,
+  url: 'https://ifood.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -17,10 +17,10 @@ const config = {
   organizationName: 'iFood', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   customFields: {
-    githubUrl: process.env.GH_BASE_URL,
-    githubClientId: process.env.GH_CLIENT_ID,
-    claUrl: process.env.CLA_URL,
-    ifoodServiceUrl: process.env.IFOOD_SERVICE_URL
+    githubUrl: 'https://github.com/login/oauth',
+    githubClientId: 'ea74eabea6d3623dec39',
+    claUrl: 'https://raw.githubusercontent.com/ifood/.github/main/CLA.md',
+    ifoodServiceUrl: 'https://infra-api.ifood-sandbox.com.br/opensource/app/v1'
   },
   themes: [
     '@ifood/docusaurus-theme'

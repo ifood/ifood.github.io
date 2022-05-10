@@ -17,8 +17,8 @@ const config = {
   organizationName: 'iFood', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   customFields: {
-    githubUrl: process.env.GITHUB_BASE_URL,
-    githubClientId: process.env.GITHUB_CLIENT_ID,
+    githubUrl: process.env.GH_BASE_URL,
+    githubClientId: process.env.GH_CLIENT_ID,
     claUrl: process.env.CLA_URL,
     ifoodServiceUrl: process.env.IFOOD_SERVICE_URL
   },

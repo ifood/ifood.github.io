@@ -9,10 +9,11 @@ on:
     branches:
       - 'main'
 
+env:
+  URL: ${{ secrets.URL }}
+
 jobs:
   validate_site:
     uses: ifood/.workflows/.github/workflows/site_validate.yml@main
-    env:
-      URL: ${{ secrets.URL }}
     with:
       directory: .

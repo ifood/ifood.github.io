@@ -11,7 +11,7 @@ export default function Projects(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   const claService = useMemo(() => new ClaService(siteConfig), []);
   const [isLoading, setIsLoading] = useState(true);
-  const [isOk, setIsOk] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
     const queryString = window.location.search;
@@ -25,11 +25,12 @@ export default function Projects(): JSX.Element {
     const load = async () => {
       try {
         const result = await claService.signCla(authCode);
-        setIsOk(result);
+        setIsSuccess(result);
       } catch (err) {
         console.log(err);
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
     };
     load();
   }, []);
@@ -49,7 +50,7 @@ export default function Projects(): JSX.Element {
               </div>
             </div>
           )}
-          {!isLoading && isOk && (
+          {isSuccess && (
             <div className="row">
               <div className="col">
                 <h1>Well done</h1>
@@ -64,7 +65,7 @@ export default function Projects(): JSX.Element {
               </div>
             </div>
           )}
-          {!isLoading && !isOk && (
+          {!isLoading && !isSuccess && (
             <div className="row">
               <div className="col">
                 <h1>Ops</h1>

@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+require('dotenv').config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -15,6 +16,12 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'iFood', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
+  customFields: {
+    githubUrl: 'https://github.com/login/oauth',
+    githubClientId: 'ea74eabea6d3623dec39',
+    claUrl: 'https://raw.githubusercontent.com/ifood/.github/main/CLA.md',
+    ifoodServiceUrl: 'https://infra-api.ifood-sandbox.com.br/opensource/app/v1'
+  },
   themes: [
     '@ifood/docusaurus-theme'
   ],

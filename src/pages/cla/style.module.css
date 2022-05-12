@@ -1,0 +1,8 @@
+.center_btn {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonless button {
+  display: none;
+}

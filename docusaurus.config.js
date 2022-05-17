@@ -18,9 +18,9 @@ const config = {
   projectName: 'docusaurus', // Usually your repo name.
   customFields: {
     githubUrl: 'https://github.com/login/oauth',
-    githubClientId: 'ea74eabea6d3623dec39',
+    githubClientId: 'bb7a22269b61fc8ca5bd',
     claUrl: 'https://raw.githubusercontent.com/ifood/.github/main/CLA.md',
-    ifoodServiceUrl: 'https://infra-api.ifood-sandbox.com.br/opensource/app/v1'
+    ifoodServiceUrl: 'https://infra-api.ifoodcorp.com.br/opensource/app/v1/api'
   },
   themes: [
     '@ifood/docusaurus-theme'

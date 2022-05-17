@@ -9,6 +9,7 @@ on:
 
 jobs:
   deploy-site:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     uses: ifood/.workflows/.github/workflows/site_publish.yml@main
     with:
       directory: .

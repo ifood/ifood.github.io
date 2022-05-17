@@ -14,8 +14,10 @@ on:
         - major
 
 jobs:
-  update_site_data:
-    uses: ./.github/workflows/site_data.yml
+  start_release:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Release Started!'
   validate_site:
     needs: update_site_data
     uses: ifood/.workflows/.github/workflows/site_validate.yml@main

@@ -1,5 +1,15 @@
 # Changelog
 
+# [0.2.0](https://github.com/ifood/ifood.github.io/compare/v0.1.0...v0.2.0) (2022-05-17)
+
+
+### Features
+
+* **cla:** Add a service to sign the cla and enhance the ux ([2c72d2b](https://github.com/ifood/ifood.github.io/commit/2c72d2bdb417b30f21025dd156a468411400d168))
+* **cla:** Add support to load CLA file from GH ([a4a9bb9](https://github.com/ifood/ifood.github.io/commit/a4a9bb9ebc36c9d6e61983b68abcdc75586437fb))
+* **cla:** Add the cla agreement page with a link to GH login ([4d8ac6a](https://github.com/ifood/ifood.github.io/commit/4d8ac6a44fe6334db0efc3099da5ca9fcf2a592c))
+* **cla:** Enhance cla text behaviour ([2a1dcca](https://github.com/ifood/ifood.github.io/commit/2a1dcca12f625927c88375f7e97e0282b6edccf5))
+
 # 0.1.0 (2022-04-27)
 
 

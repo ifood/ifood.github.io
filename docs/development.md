@@ -32,7 +32,7 @@ So, it`s required to follow some best practices that all pull requests, to help 
 1. **Keep your PR small.** Small pull requests (~300 lines of diff) are much easier to review and more likely to get merged. Make sure the PR does only one thing, otherwise please split it.
 2. **Use descriptive titles.** It is recommended to follow this [commit message style](#commit-messages).
 3. **Test your changes.** And describe how to test your pull request.
-4. **CLA.** If you haven't already, [sign the CLA](https://github.com/ifood/.github/blob/main/CLA.md).
+4. **CLA.** If you haven't already, [sign the CLA](https://ifood.github.io/cla/).
 5. **Related Issue.** All pull requests must have an issue associated, and specified in the message.
 
 All pull requests should be opened against the `main` branch.
